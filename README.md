@@ -32,26 +32,12 @@ This project proves:
 ---
 
 ## 🏗️ Architecture
+![Architecture](docs/architecture.png)
 
-```
-[ Angular / Flutter Apps ]  <--OIDC-->  [ Keycloak ]
-        |                                   |
-        v                                   |
-   [ API Gateway (APISix) ] -----------------+
-        |
-        v
-   [ Go Microservices ]
-     ├─ auth-proxy (JWT, RBAC, /me)
-     ├─ qna-rag (LLM + ES retrieval)
-     ├─ portfolio-risk (PnL, VaR, anomaly)
-     ├─ market-ingest (Kafka ticks → DB)
-     ├─ strategy-lab (baseline strategies)
-     └─ compliance-rationale (logs, alerts)
+---
 
-   [ Infra ]: PostgreSQL, Redis, Kafka, ElasticSearch, MinIO
-   [ Analytics ]: Superset dashboards
-   [ DevOps ]: Docker, Kubernetes, Jenkins, Prometheus
-```
+## 🔑 Getting Started Flow
+![Getting Started](docs/getting-started-flow.png)
 
 ---
 
@@ -125,7 +111,7 @@ Superset comes pre-wired to Postgres:
 **Parth Ashtikar**  
 AI & Full-Stack Engineer  
 - GitHub: [parthhh-a](https://github.com/parthhh-a)  
-- LinkedIn: *(add link)*  
+- LinkedIn: *[(LinkedIn)](https://www.linkedin.com/in/parthashtikar/)*  
 
 ---
 
