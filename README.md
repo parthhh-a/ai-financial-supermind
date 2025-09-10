@@ -1,4 +1,4 @@
-# 🧠 AI Financial Supermind 💰  
+#  AI Financial Supermind   
 *A dual-mode AI finance platform: Personal Wealth Advisor + Autonomous Hedge Fund Lab*  
 
 ![status](https://img.shields.io/badge/status-MVP%20in%20progress-blue)  
@@ -7,7 +7,7 @@
 
 ---
 
-## 🚀 Project Pitch
+## Project Pitch
 **AI Financial Supermind** is an **enterprise-grade full-stack AI project** that demonstrates modern AI + infra skills.  
 It runs in **two modes**:
 
