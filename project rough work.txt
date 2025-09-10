@@ -1,0 +1,9 @@
+admin admin123
+alice alice123
+
+go client secret cX7kKT2oUWu9Zd5IJpvnMk0pIZCTZAW5
+
+curl -v --http1.1 \
+  -u service-backend:cX7kKT2oUWu9Zd5IJpvnMk0pIZCTZAW5 \
+  -d "grant_type=client_credentials" \
+  http://localhost:8080/realms/Supermind/protocol/openid-connect/token

@@ -1,45 +1,60 @@
 {
   "realm": "Supermind",
   "enabled": true,
-  "registrationAllowed": false,
-  "loginWithEmailAllowed": true,
-  "resetPasswordAllowed": true,
-  "otpPolicyType": "totp",
-  "otpPolicyDigits": 6,
-  "otpPolicyPeriod": 30,
-  "requiredActions": ["CONFIGURE_TOTP"],
-  "roles": {
-    "realm": [
-      { "name": "RetailUser" },
-      { "name": "HFAnalyst" },
-      { "name": "Admin" }
-    ]
-  },
+
   "clients": [
     {
       "clientId": "web-angular",
-      "publicClient": true,
-      "redirectUris": ["http://localhost:4200/*","http://localhost/*"],
-      "webOrigins": ["*"],
-      "attributes": {
-        "post.logout.redirect.uris": "+",
-        "oauth2.device.authorization.grant.enabled": "true"
-      },
+      "name": "Angular Frontend",
       "protocol": "openid-connect",
+      "publicClient": true,
+      "directAccessGrantsEnabled": true,
       "standardFlowEnabled": true,
-      "implicitFlowEnabled": false,
-      "directAccessGrantsEnabled": true
+      "redirectUris": ["http://localhost:4200/*"],
+      "webOrigins": ["http://localhost:4200"],
+      "attributes": {
+        "post.logout.redirect.uris": "http://localhost:4200/*"
+      }
     },
     {
       "clientId": "service-backend",
-      "secret": "backend-secret-please-change",
-      "publicClient": false,
-      "serviceAccountsEnabled": true,
+      "name": "Go Backend Service",
       "protocol": "openid-connect",
-      "standardFlowEnabled": false,
+      "publicClient": false,
+      "secret": "supermind-backend-secret",
+      "serviceAccountsEnabled": true,
       "directAccessGrantsEnabled": false,
-      "redirectUris": ["*"],
-      "webOrigins": ["*"]
+      "standardFlowEnabled": false,
+      "redirectUris": [],
+      "webOrigins": []
+    }
+  ],
+
+  "roles": {
+    "realm": [
+      {
+        "name": "RetailUser",
+        "description": "Basic user role for testing"
+      }
+    ]
+  },
+
+  "users": [
+    {
+      "username": "alice",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Alice",
+      "lastName": "User",
+      "email": "alice@example.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "alice123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["RetailUser"]
     }
   ]
 }
